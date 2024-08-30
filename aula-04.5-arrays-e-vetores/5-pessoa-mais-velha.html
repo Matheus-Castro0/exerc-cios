@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Pessoa Mais Velha</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Pessoa Mais Velha</h1>
+
+            <p>Preencha as informações abaixo para saber qual pessoa é mais velha:</p>
+
+            <label for="txtNumeroPessoas">Número de pessoas que serão informadas:</label><input type="number" id="txtNumeroPessoas">
+
+            <label for="txtNomePessoas">Nome:</label><input type="text" id="txtNomePessoas">
+
+            <label for="txtIdade">Idade:</label><input type="number" id="txtIdade">
+
+            <button onclick="botao_click()">Armazenar</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        var nomes = [];
+
+        var idades = [];
+
+        function botao_click() {
+
+            var numeroPessoas = parseInt(document.getElementById("txtNumeroPessoas").value);
+
+            var nomePessoa = document.getElementById("txtNomePessoas").value;
+
+            var idade = parseInt(document.getElementById("txtIdade").value);
+
+            if (numeroPessoas > nomes.length) {
+
+                nomes.push(nomePessoa);
+
+                idades.push(idade);
+
+                document.getElementById("txtNomePessoas").value = "";
+
+                document.getElementById("txtIdade").value = "";
+
+                document.getElementById("txtNomePessoas").focus;
+            }
+
+            if (numeroPessoas == nomes.length && numeroPessoas == idades.length) {
+
+                var maiorIdade;
+
+                var posicaoMaiorIdade;
+
+                for (var i = 0; i < idades.length; i++) {
+
+                    var idadePosicao = idades[i];
+
+                    //No primeiro teste, "maiorIdade" sempre vai estar sem valor(undefined). Então ele guarda o valor da primeira idade na variável "maiorIdade" para fazer a comparação depois.
+                    //Ou seja, o "i" acima altera somente a variável idadePosicao, então, como a "idadePosicao" foi igualada à "maiorIdade", os dois valores podem ser comparados.
+                    //Dessa maneira, o valor maior sempre é mantido para a próxima comparação, independente de quantas são feitas.
+                    if (maiorIdade == undefined || idadePosicao > maiorIdade) {
+
+                        maiorIdade = idadePosicao;
+
+                        //Resolução: O "i" atual é armazenado na variável posicaoMaiorIdade
+                        posicaoMaiorIdade = i;
+                    }
+
+                }
+
+                alert("A pessoa mais velhá é: " + nomes[posicaoMaiorIdade]);
+            }
+
+
+        }
+
+
+    </script>
+
+</body>
+</html>

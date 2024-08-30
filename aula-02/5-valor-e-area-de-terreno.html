@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Cálculadora de valor de terreno</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Calculadora de valor de terreno</h1>
+
+            <p>Informe as medidas do terreno abaixo:</p>
+
+            <label for="txt1">Comprimento do terreno (metros):</label><input type="number" id="comprimento" />
+
+            <label for="txt1">Largura do terreno (metros):</label><input type="number" id="largura" />
+
+            <p>Informe o valor do metro² do local do terreno:</p>
+
+            <label for="txt1">Valor do m²:</label><input type="number" id="valorDoMetro" />
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+
+            var calcComprimento = document.getElementById("comprimento").value;
+
+            var caixaComprimento = parseFloat(calcComprimento);
+
+            var calcLargura = document.getElementById("largura").value;
+
+            var caixaLargura = parseFloat(calcLargura);
+
+            var areaDoTerreno = caixaComprimento * caixaLargura;
+
+            var calcValor = document.getElementById("valorDoMetro").value;
+
+            var caixaValorDoMetro = parseFloat(calcValor);
+
+            var resultado = areaDoTerreno * caixaValorDoMetro;
+
+            var mensagem1 = ("O valor do terreno é de R$") + resultado + (".00");
+
+            var mensagem2 = ("A área do terreno é de ") + areaDoTerreno + ("m²");
+
+            alert(mensagem1);
+
+            alert(mensagem2);
+
+        }
+
+    </script>
+
+</body>
+</html>

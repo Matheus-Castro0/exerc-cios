@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Negativos</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Exibir números negativos</h1>
+
+            <p>Preencha as informações abaixo para retornar somente os números negativos:</p>
+
+            <label for="txtQuantidadeNumeros">Quantidade de números a ser informados:</label><input type="number" id="txtQuantidadeNumeros" />
+
+            <label for="txtNumerosInformados">Números a serem analizados:</label><input type="number" id="txtNumerosInformados" />
+
+            <button onclick="botao_click()">Armazenar</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        numeros = [];
+
+        negativos = [];
+
+        function botao_click() {
+
+            var quantidadeNumeros = parseInt(document.getElementById("txtQuantidadeNumeros").value);
+
+            var numerosInformados = parseInt(document.getElementById("txtNumerosInformados").value);
+
+            if (quantidadeNumeros > numeros.length) {
+
+                numeros.push(numerosInformados);
+
+                document.getElementById("txtNumerosInformados").value = "";
+
+                document.getElementById("txtNumerosInformados").focus;
+
+            }
+
+            if (quantidadeNumeros == numeros.length) {
+
+                for (var i = 0; i < numeros.length; i++) {
+
+                    //A variável abaixo verifica os valores do vetor "numeros" por posição, que é definida pelo i. Quando o valor do i aumenta (de 1 em 1), ele verifica a próxima posição.
+                    numero = numeros[i];
+
+                    if (numero < 0) {
+
+                        negativos.push(numero);
+                    }
+
+                }
+
+                alert("Os números negativos são " + negativos + ".");
+
+                numeros = [];
+
+                negativos = [];
+
+                document.getElementById("txtQuantidadeNumeros").value = "";
+
+                document.getElementById("txtNumerosInformados").value = "";
+
+                document.getElementById("txtQuantidadeNumeros").focus;
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

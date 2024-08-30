@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Menor número</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Qual o menor número?</h1>
+
+            <p>Digite três números inteiros para saber qual é o menor dentre eles:</p>
+
+            <label for="txt1">Primeiro número:</label><input type="number" id="caixa1"/>
+
+            <label for="txt1">Segundo número:</label><input type="number" id="caixa2"/>
+
+            <label for="txt1">Terceiro número:</label><input type="number" id="caixa3"/>
+
+            <button onclick="botao_click()">Verificar</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var numero1 = document.getElementById("caixa1").value;
+
+            var numero2 = document.getElementById("caixa2").value;
+
+            var numero3 = document.getElementById("caixa3").value;
+
+            var numero1Int = parseFloat(numero1);
+
+            var numero2Int = parseFloat(numero2);
+
+            var numero3Int = parseFloat(numero3);
+
+            if (numero1Int < numero2Int && numero1Int < numero3Int) {
+                alert("O menor número é " + numero1Int);
+            }
+
+            else if (numero2Int < numero1Int && numero2Int < numero3Int) {
+                alert("O menor número é " + numero2Int);
+            }
+
+            else if (numero3Int < numero1Int && numero3Int < numero2Int) {
+                alert("O menor número é " + numero3Int);
+            }
+
+
+        }
+
+    </script>
+
+</body>
+</html>

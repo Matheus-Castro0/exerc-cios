@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Cumprimento personalizado</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Cumprimento personalizado</h1>
+            
+            <button onclick="botao_click()">Te desejo um(a)</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var horarioAtual = new Date().getHours();
+
+            if (horarioAtual < 12) {
+                alert("Bom dia!");
+            }
+            else if (horarioAtual >= 12 && horarioAtual < 18) {
+                alert("Boa tarde!");
+            }
+            else if (horarioAtual >= 18 && horarioAtual < 24){
+                alert("Boa noite!");
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

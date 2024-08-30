@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Maior, Menor e Média</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Maior, Menor e Média</h1>
+
+            <p>
+                Preencha as informações requeridas nas caixas abaixo. Depois clique no botão para calcular a:<br />
+                - Média entre os números<br />
+                - O maior número <br />
+                - O menor número
+            </p>
+
+            <label for="txtQuantidadeNumeros">Quantos números serão informados:</label><input type="number" id="txtQuantidadeNumeros" />
+
+            <label for="txtNumeros">Informe os números aqui:</label><input type="number" id="txtNumeros" />
+
+            <button onclick="botao_click()">Armazenar números</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        var numeros = [];
+
+        function botao_click() {
+
+            var quantidadeNumeros = parseInt(document.getElementById("txtQuantidadeNumeros").value);
+
+            if (numeros.length < quantidadeNumeros) {
+
+                var numerosArmazenados = parseInt(document.getElementById("txtNumeros").value);
+
+                numeros.push(numerosArmazenados);
+
+                document.getElementById("txtNumeros").value = "";
+
+                document.getElementById("txtNumeros").focus();
+
+            }
+
+            if (numeros.length == quantidadeNumeros) {
+
+                var maiorNumero;
+                var menorNumero;
+                var soma = 0;
+                var media;
+
+                for (var i = 0; i < numeros.length; i++) {
+
+                    var numero = numeros[i];
+
+                    if (maiorNumero == undefined || numero > maiorNumero) {
+                        maiorNumero = numero;
+                    }
+
+                    if (menorNumero == undefined || numero < menorNumero) {
+                        menorNumero = numero;
+                    }
+
+                    soma = soma + numero;
+
+                }
+
+                media = soma / quantidadeNumeros;
+
+                alert("O maior número é " + maiorNumero + ".\r" + ". O menor número é " + menorNumero + ".\r" + "A média é " + media);
+
+                numeros = [];
+
+                document.getElementById("txtNumeros").value = "";
+
+                document.getElementById("txtQuantidadeNumeros").value = "";
+
+                document.getElementById("txtQuantidadeNumeros").focus();
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>

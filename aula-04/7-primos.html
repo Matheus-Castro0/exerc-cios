@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Antecessores primos</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Antecessores Primos</h1>
+
+            <label for="txt1">Digite um número abaixo para saber seus antecessores primos:</label><input type="number" id="txtNumero">
+            
+            <button onclick="botao_click()">Verificar</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var numeroTexto = document.getElementById("txtNumero").value;
+
+            var numero = parseInt(numeroTexto);
+
+            var mensagem = ("Os números primos que antecedem o " + numero + " são: \r");
+
+            for (i = 2; i < numero; i++) {
+
+                var primo = true;
+
+                //O segundo "for" vai dividir o "i" por todos os valores que vem antes dele. Se em qualquer um dos resultados o resto é 0, o número é descartado da categoria "primo" pelo comando (primo = false;)
+
+                for (j = 2; j < i; j++) {
+
+                    var resto = i % j;
+
+                    if (resto == 0) {
+
+                        primo = false;
+
+                    }
+                }
+
+                if (primo) {
+
+                    mensagem += i + "\r";
+                }
+            }
+
+            alert(mensagem);
+
+        }
+
+    </script>
+
+</body>
+</html>

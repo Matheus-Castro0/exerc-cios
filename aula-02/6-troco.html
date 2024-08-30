@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora de troco</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Calculadora de troco</h1>
+
+            <p>Informe abaixo o</p>
+
+            <label for="txt1">Preço do produto (unidade):</label><input type="number" id="caixaPreco" />
+
+            <label for="txt1">Quantas unidades:</label><input type="number" id="caixaQuantidade" />
+
+            <label for="txt1">Dinheiro entregue para o pagamento (reais):</label><input type="number" id="caixaTroco" />
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var preco = document.getElementById("caixaPreco").value;
+
+            var calcPreco = parseFloat(preco);
+
+            var unidades = document.getElementById("caixaQuantidade").value;
+
+            var calcUnidades = parseInt(unidades);
+
+            var dinheiroPag = document.getElementById("caixaTroco").value;
+
+            var calcNota = parseFloat(dinheiroPag);
+
+            var precoTotal = calcPreco * calcUnidades;
+
+            var troco = calcNota - precoTotal;
+
+            var mensagem = "O valor do troco a ser devolvido é de R$" + troco;
+
+            alert (mensagem);
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Somatória de notas</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Somatória de notas</h1>
+
+            <label for="txt1">Nota primeiro semestre:</label><input type="number" id="caixaNota1" />
+
+            <label for="txt1">Nota segundo semestre:</label><input type="number" id="caixaNota2" />
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var pegarNota1 = document.getElementById("caixaNota1").value;
+
+            var pegarNota2 = document.getElementById("caixaNota2").value;
+
+            var nota1 = parseFloat(pegarNota1);
+
+            var nota2 = parseFloat(pegarNota2);
+
+            var somaNotas = nota1 + nota2;
+
+            if (somaNotas < 6) {
+                alert("O aluno foi reprovado, pois sua nota não satisfaz a média requerida");
+                alert("A nota total do aluno no ano foi de " + somaNotas + " pontos");
+            }
+            else if (somaNotas >= 6) {
+                alert("O aluno foi aprovado, pois sua nota satisfaz a média requerida");
+                alert("A nota total do aluno no ano foi de " + somaNotas + " pontos");
+            }
+
+
+
+        }
+
+    </script>
+
+</body>
+</html>

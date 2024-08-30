@@ -1,0 +1,12 @@
+#txtNome{
+    background: #defbff
+}
+
+ul{
+    color:navy;
+}
+
+form input[type="password"]{
+    background:rebeccapurple;
+    height: 30px;
+}

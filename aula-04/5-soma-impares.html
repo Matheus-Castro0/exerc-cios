@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Soma números ímpares</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Soma de números ímpares</h1>
+
+            <p>Digite dois números abaixo para que o programa calcule a soma dos impares entre eles:</p>
+
+            <label for="txt1">Primeiro número:</label><input type="number" id="txtNumero1"/>
+
+            <label for="txt1">Segundo número:</label><input type="number" id="txtNumero2"/>
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var textoNumero1 = document.getElementById("txtNumero1").value;
+
+            var textoNumero2 = document.getElementById("txtNumero2").value;
+
+            var numero1 = parseInt(textoNumero1);
+
+            var numero2 = parseInt(textoNumero2);
+
+            var soma = 0;
+
+            for (var i = numero1; i <= numero2; i++) {
+
+                //O sinal de "%" tem a função de dividir e mostrar o resto
+
+                var resto = i % 2;
+
+                //Agora a função "if" separa os ímpares definidos pelo mod(%) como 1, já que os pares são definidos como 0
+
+                if (resto > 0) {
+
+                    var soma = soma + i;
+                }
+            }
+
+            alert("A soma dos números ímpares do intervalo de " + numero1 + " e " + numero2 + " = " + soma);
+
+        }
+
+    </script>
+
+</body>
+</html>

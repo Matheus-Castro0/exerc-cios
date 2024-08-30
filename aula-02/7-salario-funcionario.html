@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora - Salário</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Calculadora de Salário</h1>
+
+            <label for="txt1">Nome do funcionário:</label><input type="text" id="nomeFuncionario" />
+
+            <label for="txt1">Quanto o funcionário recebe por hora?</label><input type="number" id="valorHora" />
+
+            <label for="txt1">Quantas horas o funcionário trabalhou no mês?</label><input type="number" id="horasTrabalhadas" />
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var nome = document.getElementById("nomeFuncionario").value;
+
+            var valorHr = document.getElementById("valorHora").value;
+
+            var calcHr = parseFloat(valorHr);
+
+            var quantidadeHr = document.getElementById("horasTrabalhadas").value;
+
+            var calcQuantidadeHr = parseInt(quantidadeHr);
+
+            var valorAPagar = calcHr * calcQuantidadeHr;
+
+            var mensagem = nome + (" deve receber ") + valorAPagar + (" reais de pagamento, pois trabalhou por ") + calcQuantidadeHr + (" horas esse mês.");
+
+            alert(mensagem);
+
+        }
+
+    </script>
+
+</body>
+</html>

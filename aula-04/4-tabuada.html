@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Tabuada</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Tabuada</h1>
+
+            <label for="txt1">Digite um número abaixo para saber sua tabuada:</label><input type="text" id="txtNumero" />
+            
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var caixaNumero = document.getElementById("txtNumero").value;
+
+            var numero = parseInt(caixaNumero);
+
+            var multiplicacao = 10
+
+            var mensagem = ("A tabuada do " + numero + " é: \r");
+
+            for (var i = multiplicacao; i >= 1; i--) {
+
+                var calculo = (numero + " x " + i + " = " + numero * i + "\r");
+
+                //A variável mensagem anterior vai ser somada com os resultados novos da variável calculo
+
+                var mensagem = mensagem + calculo;
+
+            }
+
+            //O alert fica fora do "for" para poder mostrar todos os resultados juntos. Caso estivesse dentro do "for", seriam criados varios alerts com resultados individuais.
+
+            alert(mensagem);
+
+        }
+
+    </script>
+
+</body>
+</html>
